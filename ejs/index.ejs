@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="/styles.css" rel="stylesheet">
+    <title>Business card</title>
+</head>
+<body>
+    <%- include('./partials/navbar'); %>
+    <div class="container">
+        <h1> <%= title%> </h1>
+        <div class="row">
+            <ul class="list-group col-lg-6" style="column-count: 2;">
+                <% for(var i=0; i < data.length; i++) { %>
+                <li class="list-group-item">
+                    <div class="card text-dark bg-light border-dark mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                          <div class="col-6">
+                            <img src=<%= data[i].avatar %> class="img-fluid rounded-start" alt="...">
+                          </div>
+                          <div class="col-md-6">
+                            <div class="card-body">
+                              <h5 class="card-title"><%= data[i].first_name%> <%= data[i].last_name%></h5>
+                              <p class="card-text"><strong><%= data[i].email%></strong></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+      
+        <div class="d-grid gap-2 d-md-block col-4 mx-auto">
+            <form method="get" action="/persons">
+                <button type="submit" class="btn btn-primary btn-lg">Download data!</button>
+             </form>
+        </div>
+        
+    </div>
+</body>
+</html>

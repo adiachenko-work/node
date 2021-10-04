@@ -1,0 +1,21 @@
+{
+  "name": "node_app",
+  "version": "1.0.0",
+  "description": "test task",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Alona Diachenko <adiachenko.work@gmail.com>",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
